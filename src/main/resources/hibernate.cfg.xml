@@ -12,7 +12,9 @@
         <!-- DB schema will be updated if needed -->
          <property name="hibernate.hbm2ddl.auto">update</property>
 
-<!--Definicja modeli
-        <mapping class="......................."/>-->
+        <!--Definicja modeli-->
+        <mapping class="hibernate.warsztat.model.Pojazd"/>
+        <mapping class="hibernate.warsztat.model.Mechanik"/>
+        <mapping class="hibernate.warsztat.model.SerwisPojazdu"/>
     </session-factory>
 </hibernate-configuration>

@@ -1,4 +1,4 @@
-package hibernate.warsztat.model;
+package service.workshop.CheckPoint;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -24,7 +24,6 @@ public class Service {
     @CreationTimestamp
     private LocalDateTime timeAdd;
 
-    private LocalDateTime leadTime;
 
     @ManyToOne
     @ToString.Exclude

@@ -1,4 +1,4 @@
-package hibernate.warsztat.model;
+package service.workshop.CheckPoint;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -19,7 +19,6 @@ public class Car {
 
     private String mark;
     private String model;
-    private String vin;
     private String registeryNumber;
 
     @OneToMany(mappedBy = "car")

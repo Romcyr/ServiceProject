@@ -1,4 +1,4 @@
-package hibernate.warsztat.model;
+package service.workshop.CheckPoint;
 
 import jakarta.persistence.*;
 import lombok.*;
