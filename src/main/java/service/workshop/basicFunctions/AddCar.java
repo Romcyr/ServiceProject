@@ -16,7 +16,6 @@ public class AddCar implements Function {
     @Override
     public String getFunction() {
         System.out.print("Dodaj Samochód: ");
-
         return "1";
     }
 
@@ -27,16 +26,16 @@ public class AddCar implements Function {
         String mark = Function.scanner.nextLine();
         if (mark.matches("\\d+")) {
             System.out.println("To pole nie może zawierać cyfr!");
-            System.out.println("Marka:");
+            System.out.println("Podaj Markę:");
             mark = Function.scanner.nextLine();
         } else if (mark.isEmpty()) {
             System.out.println("To pole nie może być puste!");
+            System.out.println("Podaj Markę:");
+            mark = Function.scanner.nextLine();
+        } else if (!mark.isEmpty() && (!mark.matches("\\d+"))){
             System.out.println("Marka:");
             mark = Function.scanner.nextLine();
-//        } else{
-//            System.out.println("Marka:");
-//            mark = Function.scanner.nextLine();
-//        }
+        }
 
 
             System.out.println("Model:");
@@ -56,5 +55,6 @@ public class AddCar implements Function {
 
         }
     }
-}
+
+
 
