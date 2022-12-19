@@ -54,7 +54,7 @@ public class DataAccessObject<T>{
         try (Session session = HibernateUtil.INSTANCE.getSessionFactory().openSession()){
             Transaction transaction = session.beginTransaction();
 
-            // sprawdz czy istnieje, pobierz z bazy i sprawcz czy nbie jest null
+            // sprawdz czy istnieje, pobierz z bazy i sprawdz czy nie jest null
             T encja = session.get(tClass, id);
             if (encja == null){
                 return false; // nie ma encji z takim id
@@ -62,7 +62,7 @@ public class DataAccessObject<T>{
 
             session.remove(encja);
             transaction.commit();
-            return true; //znajdz encje i ja usun, zrob commit
+            return true; //znajdz encje i ja usun, zrob commit do bazy danych
         }catch (Exception ioe){
             System.err.println("Błąd bazy: " + ioe);
         }

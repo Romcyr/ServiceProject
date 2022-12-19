@@ -13,8 +13,8 @@
          <property name="hibernate.hbm2ddl.auto">update</property>
 
         <!--Definicja modeli-->
-        <mapping class="hibernate.warsztat.model.Pojazd"/>
-        <mapping class="hibernate.warsztat.model.Mechanik"/>
-        <mapping class="hibernate.warsztat.model.SerwisPojazdu"/>
+        <mapping class="service.workshop.CheckPoint.Car"/>
+        <mapping class="service.workshop.CheckPoint.Mechanic"/>
+        <mapping class="service.workshop.CheckPoint.Service"/>
     </session-factory>
 </hibernate-configuration>

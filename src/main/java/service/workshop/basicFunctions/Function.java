@@ -1,4 +1,4 @@
-package service.workshop.function;
+package service.workshop.basicFunctions;
 
 import java.util.Scanner;
 
