@@ -24,19 +24,18 @@ public class AddCar implements Function {
 
         System.out.println("Marka:");
         String mark = Function.scanner.nextLine();
-        if (mark.matches("\\d+")) {
-            System.out.println("To pole nie może zawierać cyfr!");
+
+        while (true) {
+            if (mark.matches("\\d+")) {
+                System.out.println("To pole nie może zawierać cyfr!");
+            } else if (mark.isEmpty()) {
+                System.out.println("To pole nie może być puste!");
+            } else {
+                break;
+            }
             System.out.println("Podaj Markę:");
-            mark = Function.scanner.nextLine();
-        } else if (mark.isEmpty()) {
-            System.out.println("To pole nie może być puste!");
-            System.out.println("Podaj Markę:");
-            mark = Function.scanner.nextLine();
-        } else if (!mark.isEmpty() && (!mark.matches("\\d+"))){
-            System.out.println("Marka:");
             mark = Function.scanner.nextLine();
         }
-
 
             System.out.println("Model:");
             String model = Function.scanner.nextLine();
