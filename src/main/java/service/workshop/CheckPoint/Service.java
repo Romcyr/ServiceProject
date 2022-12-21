@@ -16,14 +16,10 @@ public class Service {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String description;
-    private String activities;
-    private String cost;
 
     @CreationTimestamp
     private LocalDateTime timeAdd;
-
 
     @ManyToOne
     @ToString.Exclude

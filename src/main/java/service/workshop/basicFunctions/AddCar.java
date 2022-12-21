@@ -15,8 +15,8 @@ public class AddCar implements Function {
 
     @Override
     public String getFunction() {
-        System.out.print("Dodaj Samochód: ");
-        return "1";
+        System.out.print("Dodaj Samochód:  ");
+        return "2";
     }
 
     @Override
@@ -43,6 +43,7 @@ public class AddCar implements Function {
             System.out.println("Nr rejestracyjny:");
             String registeryNumber = Function.scanner.nextLine();
 
+
             Car samochód = Car.builder()
                     .mark(mark)
                     .model(model)
@@ -50,10 +51,13 @@ public class AddCar implements Function {
                     .build();
 
             dataAccessObject.insert(samochód);
+        System.out.println("Dodano samochód");
 
 
         }
-    }
+
+
+}
 
 
 

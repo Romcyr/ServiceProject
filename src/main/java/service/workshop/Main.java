@@ -1,15 +1,16 @@
 package service.workshop;
 
-import service.workshop.basicFunctions.AddCar;
-import service.workshop.basicFunctions.Function;
+import service.workshop.CheckPoint.Service;
+import service.workshop.basicFunctions.*;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         System.err.println("__________________________________________________________");
         System.err.println("Powered by RC for Plichta Castrol Serwis");
         System.err.println("__________________________________________________________");
@@ -18,8 +19,11 @@ public class Main {
         List <Function> functionList = new ArrayList<>(
                 List.of(
 
-                        new AddCar()
-                )
+                        new AddMechanic(),
+                        new AddCar(),
+                        new CarList(),
+                        new AddServiceDescription()
+                        )
         );
 
 
@@ -36,14 +40,13 @@ public class Main {
             System.out.println("Nie dokonałeś żadnego wyboru");
             System.out.println("Co wybierasz?");
             function = Function.scanner.nextLine();
+
         }
-
-
-                for (Function functionAvailable : functionList) {
-                    if (functionAvailable.getFunction().equalsIgnoreCase(String.valueOf(function))) {
-                        functionAvailable.functionSupport();
-                    }
-                }
+        for (Function functionAvailable : functionList) {
+            if (functionAvailable.getFunction().equalsIgnoreCase(String.valueOf(function))) {
+                functionAvailable.functionSupport();
+            }
+        }
 
 
 

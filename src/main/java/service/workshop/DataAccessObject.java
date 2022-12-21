@@ -3,7 +3,6 @@ package service.workshop;
 import jakarta.persistence.TypedQuery;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import service.database.HibernateUtil;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.util.Set;
 
+
 @Data
 @Entity
 @Builder
@@ -13,13 +14,16 @@ import java.util.Set;
 
 public class Mechanic {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @ToString.Exclude
     private String name;
-    private String qualification;
-    private String specification;
 
+
+
+//
+//    private String qualification;
+//    private String specification;
     @OneToMany
     @ToString.Exclude
     @EqualsAndHashCode.Exclude

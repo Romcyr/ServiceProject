@@ -1,5 +1,6 @@
 package service.workshop.basicFunctions;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public interface Function {
@@ -7,4 +8,5 @@ public interface Function {
 
     String getFunction();
     void functionSupport();
+
 }
