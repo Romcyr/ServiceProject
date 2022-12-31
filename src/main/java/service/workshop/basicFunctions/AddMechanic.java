@@ -8,6 +8,7 @@ public class AddMechanic implements Function{
     public AddMechanic() {
 
         this.dataAccessObject = new DataAccessObject<>();
+
     }
 
     private DataAccessObject<Mechanic> dataAccessObject;
@@ -23,13 +24,15 @@ public class AddMechanic implements Function{
     @Override
     public void functionSupport(){
         System.out.println("Podaj imie");
-        String imie = Function.scanner.nextLine();
+        String name = Function.scanner.nextLine();
 
 
-        Mechanic mechanik = Mechanic.builder()
-                .name(imie)
+        Mechanic mechanic = Mechanic.builder()
+                .name(name)
                 .build();
-        dataAccessObject.insert(mechanik);
+
+
+        dataAccessObject.insert(mechanic);
         System.out.println("Dodano mechanika");
 
     }

@@ -1,10 +1,10 @@
 package service.workshop.CheckPoint;
 
+
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Set;
-
 
 @Data
 @Entity
@@ -12,21 +12,15 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 
+
+
 public class Mechanic {
     @Id
-    private Long id;
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @ToString.Exclude
+    private Long id;
+
     private String name;
 
 
 
-//
-//    private String qualification;
-//    private String specification;
-    @OneToMany
-    @ToString.Exclude
-    @EqualsAndHashCode.Exclude
-    private Set<Service> completedServices;
 }
-

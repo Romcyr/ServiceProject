@@ -16,7 +16,7 @@ public class Main {
         System.err.println("__________________________________________________________");
         System.out.println("Witaj w programie do zarządania czynnościami, wybierz z poniżej listy opcję która cię interesuje");
 
-        List <Function> functionList = new ArrayList<>(
+        List <Function> functionList = new ArrayList<>( //Lista dostępnych opcji
                 List.of(
 
                         new AddMechanic(),
@@ -30,7 +30,7 @@ public class Main {
 
         System.out.println("__________________________________________________________");
         System.out.println("Dostępne funkcje");
-        functionList.forEach(function -> System.out.println(function.getFunction()));
+        functionList.forEach(function -> System.out.println(function.getFunction()));// Lista dostępnych funkcji programu
         System.out.println("__________________________________________________________");
 
 
@@ -45,6 +45,8 @@ public class Main {
         for (Function functionAvailable : functionList) {
             if (functionAvailable.getFunction().equalsIgnoreCase(String.valueOf(function))) {
                 functionAvailable.functionSupport();
+
+
             }
         }
 

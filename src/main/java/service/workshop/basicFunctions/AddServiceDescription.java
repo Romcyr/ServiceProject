@@ -1,11 +1,9 @@
 package service.workshop.basicFunctions;
 
 import service.workshop.CheckPoint.Car;
-import service.workshop.CheckPoint.Mechanic;
 import service.workshop.CheckPoint.Service;
 import service.workshop.DataAccessObject;
 
-import java.sql.*;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,13 +16,13 @@ public class AddServiceDescription implements Function {
 
         this.dataAccessObject = new DataAccessObject<>();
         this.dataAccessObjectCar = new DataAccessObject<>();
-        this.dataAccessObjectMechanic = new DataAccessObject<>();
+
 
     }
 
     private DataAccessObject<Service> dataAccessObject;
     private DataAccessObject<Car> dataAccessObjectCar;
-    private DataAccessObject<Mechanic> dataAccessObjectMechanic;
+
 
 
 
@@ -59,18 +57,6 @@ public class AddServiceDescription implements Function {
         String description = Function.scanner.nextLine();
 
 
-
-        ///////////////// Upewnij się że mechanik istnieje
-        System.out.println("Podaj id serwisanta");
-        String idMechanikString = Function.scanner.nextLine();
-        Long idMechanik = Long.parseLong(idString);
-
-        Optional<Mechanic> mechanicOptional = dataAccessObjectMechanic.find(Mechanic.class, idMechanik);
-        if (carOptional.isEmpty()){
-            System.err.println("Mechanik nie istnieje, nie można dodać serwisu");
-            return;
-        }
-
         System.out.println("Podaj imie serwisanta");
         String nameMechanikString = Function.scanner.nextLine();
         String name = nameMechanikString;
@@ -78,7 +64,7 @@ public class AddServiceDescription implements Function {
 
 
         Service carService = Service.builder()
-                .mechanic(new Mechanic())
+                .nameMechanic(name)
                 .car(carOptional.get())
                 .description(description)
                 .build();

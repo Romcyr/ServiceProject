@@ -14,7 +14,7 @@
 
         <!--Definicja modeli-->
         <mapping class="service.workshop.CheckPoint.Car"/>
-        <mapping class="service.workshop.CheckPoint.Mechanic"/>
+       <mapping class="service.workshop.CheckPoint.Mechanic"/>
         <mapping class="service.workshop.CheckPoint.Service"/>
     </session-factory>
 </hibernate-configuration>

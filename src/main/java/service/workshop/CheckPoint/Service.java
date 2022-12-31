@@ -16,14 +16,13 @@ public class Service {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @ToString.Exclude
+    private String nameMechanic;
     private String description;
 
     @CreationTimestamp
     private LocalDateTime timeAdd;
-
-    @ManyToOne
-    @ToString.Exclude
-    private Mechanic mechanic;
 
     @ManyToOne
     @ToString.Exclude
