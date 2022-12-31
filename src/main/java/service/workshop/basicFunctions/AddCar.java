@@ -40,8 +40,27 @@ public class AddCar implements Function {
             System.out.println("Model:");
             String model = Function.scanner.nextLine();
 
+        while (true) {
+            if (model.isEmpty()) {
+                System.out.println("To pole nie może być puste!");
+            }else {
+                break;
+            }
+            System.out.println("Podaj Model:");
+            model = Function.scanner.nextLine();
+        }
+
             System.out.println("Nr rejestracyjny:");
             String registeryNumber = Function.scanner.nextLine();
+        while (true) {
+            if (registeryNumber.isEmpty()) {
+                System.out.println("To pole nie może być puste!");
+            }else {
+                break;
+            }
+            System.out.println("Podaj numer rejestracyjny:");
+            registeryNumber = Function.scanner.nextLine();
+        }
 
 
             Car samochód = Car.builder()
