@@ -20,7 +20,8 @@ public class CarList implements Function{
 
     @Override
     public String getFunction() {
-        System.out.print("Lista Samochodów:");
+
+        System.out.print("Lista Samochodów:" );
 
         return "3";
     }
