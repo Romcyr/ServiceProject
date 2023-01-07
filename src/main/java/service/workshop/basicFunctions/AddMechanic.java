@@ -1,5 +1,4 @@
 package service.workshop.basicFunctions;
-
 import service.workshop.CheckPoint.Mechanic;
 import service.workshop.DataAccessObject;
 
@@ -10,14 +9,16 @@ public class AddMechanic implements Function{
         this.dataAccessObject = new DataAccessObject<>();
 
     }
-
     private DataAccessObject<Mechanic> dataAccessObject;
 
 
     @Override
     public String getFunction(){
-        System.out.print("Dodaj Mechanika: ");
+        return "Dodaj Mechanika";
+    }
 
+    @Override
+    public String getFunctionCode(){
         return "1";
     }
 

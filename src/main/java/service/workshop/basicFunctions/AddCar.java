@@ -1,5 +1,4 @@
 package service.workshop.basicFunctions;
-
 import service.workshop.CheckPoint.Car;
 import service.workshop.DataAccessObject;
 
@@ -15,7 +14,11 @@ public class AddCar implements Function {
 
     @Override
     public String getFunction() {
-        System.out.print("Dodaj Samochód:  ");
+        return "Dodaj samochód";
+    }
+
+    @Override
+    public String getFunctionCode() {
         return "2";
     }
 
@@ -37,13 +40,13 @@ public class AddCar implements Function {
             mark = Function.scanner.nextLine();
         }
 
-            System.out.println("Model:");
-            String model = Function.scanner.nextLine();
+        System.out.println("Model:");
+        String model = Function.scanner.nextLine();
 
         while (true) {
             if (model.isEmpty()) {
                 System.out.println("To pole nie może być puste!");
-            }else {
+            } else {
                 break;
             }
             System.out.println("Podaj Model:");

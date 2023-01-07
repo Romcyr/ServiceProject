@@ -1,10 +1,6 @@
 package service.workshop.basicFunctions;
-
-
 import service.workshop.CheckPoint.Car;
-import service.workshop.CheckPoint.Service;
 import service.workshop.DataAccessObject;
-
 import java.util.List;
 
 public class CarList implements Function{
@@ -15,14 +11,13 @@ public class CarList implements Function{
         this.dataAccessObject = new DataAccessObject<>();
     }
 
-
-
-
     @Override
     public String getFunction() {
+        return "Lista Samochodów";
+    }
 
-        System.out.print("Lista Samochodów:" );
-
+    @Override
+    public String getFunctionCode() {
         return "3";
     }
 

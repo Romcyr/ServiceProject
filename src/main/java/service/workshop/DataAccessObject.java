@@ -7,6 +7,12 @@ import org.hibernate.Transaction;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+/*
+DataAccessObject - obiekt który udostępnia dostęp do danych, umożliwia manipulowanie danymi w bazie
+
+Posiada metody CRUD dla wybranego modelu - (create, read, update, delete, -> utwórz, odczytaj, aktualizuj, usuń)
+ */
+
 
 public class DataAccessObject<T>{
 
@@ -31,7 +37,8 @@ public class DataAccessObject<T>{
             List<T> lista = zapytanie.getResultList();
             list.addAll(zapytanie.getResultList());
 
-            lista.forEach(System.out::println);
+//            lista.forEach(System.out::println);
+            return lista;
         }catch (Exception e){
             System.err.println("Błąd: " + e);
         }

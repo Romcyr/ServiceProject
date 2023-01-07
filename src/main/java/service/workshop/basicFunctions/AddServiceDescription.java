@@ -3,7 +3,6 @@ package service.workshop.basicFunctions;
 import service.workshop.CheckPoint.Car;
 import service.workshop.CheckPoint.Service;
 import service.workshop.DataAccessObject;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -23,15 +22,13 @@ public class AddServiceDescription implements Function {
     private DataAccessObject<Service> dataAccessObject;
     private DataAccessObject<Car> dataAccessObjectCar;
 
-
-
-
-
-
     @Override
     public String getFunction(){
+        return "Dodaj serwis";
+    }
 
-        System.out.print("Dodaj serwis:    ");
+    @Override
+    public String getFunctionCode(){
         return "4";
     }
 
@@ -60,6 +57,8 @@ public class AddServiceDescription implements Function {
         System.out.println("Podaj imie serwisanta");
         String nameMechanikString = Function.scanner.nextLine();
         String name = nameMechanikString;
+
+
 
 
 

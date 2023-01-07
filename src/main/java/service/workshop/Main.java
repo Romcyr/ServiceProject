@@ -7,12 +7,15 @@ import static service.workshop.basicFunctions.Function.scanner;
 public class Main {
 
     public static void main(String[] args)  {
-        String end = "";
+
         System.err.println("__________________________________________________________");
         System.err.println("Powered by RC for Plichta Castrol Serwis");
         System.err.println("__________________________________________________________");
         System.out.println("Witaj w programie do zarządania czynnościami, wybierz z poniżej listy opcję która cię interesuje");
-        while (!end.equals("koniec")) {
+
+        String function = "";
+
+        while (!function.equals("koniec")) {
 
             List<Function> functionList = new ArrayList<>( //Lista dostępnych opcji
                     List.of(
@@ -20,19 +23,19 @@ public class Main {
                             new AddMechanic(),
                             new AddCar(),
                             new CarList(),
-                            new AddServiceDescription()
+                            new AddServiceDescription(),
+                            new CarComments()
                     )
             );
 
-
             System.out.println("__________________________________________________________");
             System.out.println("Dostępne funkcje");
-            functionList.forEach(function -> System.out.println(function.getFunction()));// Lista dostępnych funkcji programu
+            // Dodaj mechanika          -> 1
+            functionList.forEach(fn -> System.out.printf("%-20.20s -> %-50.50s\n", fn.getFunction(), fn.getFunctionCode()));// Lista dostępnych funkcji programu
             System.out.println("__________________________________________________________");
 
-
             System.out.println("Co wybierasz?");
-            String function = scanner.nextLine();
+            function = scanner.nextLine();
             if (function.isEmpty()) {
                 System.out.println("Nie dokonałeś żadnego wyboru");
                 System.out.println("Co wybierasz?");
@@ -40,15 +43,10 @@ public class Main {
 
             }
             for (Function functionAvailable : functionList) {
-                if (functionAvailable.getFunction().equalsIgnoreCase(String.valueOf(function))) {
+                if (functionAvailable.getFunctionCode().equalsIgnoreCase(String.valueOf(function))) {
                     functionAvailable.functionSupport();
-
-
                 }
             }
-
-            end = scanner.nextLine();
         }
-
     }
 }
