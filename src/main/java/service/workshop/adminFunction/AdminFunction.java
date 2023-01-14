@@ -1,22 +1,23 @@
 package service.workshop.adminFunction;
 
-import service.workshop.DataAccessObject;
 
-import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AdminFunction {
 
-    public AdminFunction() {
 
+    private String password;
+
+    public void setPassword(String password) {
+        this.password = "loop";
     }
-    List<AdminFunctionInterface> adminFunctionList = new ArrayList<>(
-            List.of(
-                    new ServiceListByCarId(),
-                    new ServiceListByMechanicId()
-
-            )
-    );
-
+    public String getPassword() {
+        return password;
+    }
 }
+
+
+
+
+

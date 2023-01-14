@@ -16,12 +16,12 @@ public class ServiceListByCarId implements AdminFunctionInterface {
 
     @Override
     public String getAdminFunction() {
-        return "Historia serwisów po Id Samochodu";
+        return "Historia Id Samochodu";
     }
 
     @Override
     public String getAdminFunctionCode() {
-        return "[";
+        return "8";
     }
 
     @Override
