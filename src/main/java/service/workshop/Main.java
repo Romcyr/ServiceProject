@@ -1,4 +1,6 @@
 package service.workshop;
+import service.workshop.adminFunction.AdminFunction;
+import service.workshop.adminFunction.ServiceListByCarId;
 import service.workshop.basicFunctions.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +28,8 @@ public class Main {
                             new MechanicList(),
                             new CarList(),
                             new CarComments()
+
+
                     )
             );
 
