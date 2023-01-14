@@ -32,6 +32,8 @@ public class Main {
                             new MechanicList(),
                             new CarList(),
                             new CarComments()
+//                            new ServiceListByCarId(),
+//                            new ServiceListByMechanicId()
 
 
                     )
@@ -54,25 +56,32 @@ public class Main {
             System.out.println("__________________________________________________________");
             System.out.println("Co wybierasz?");
             function = scanner.nextLine();
+            if ((function.equals("8") || function.equals("9"))) {
+                System.out.println("Podaj hasło administratora");
+                String enterPasswordUser = scanner.nextLine();
+                while (!admin.getPassword().equals(enterPasswordUser)) {
+                    System.out.println("Niepoprawne hasło, spróbuj ponownie");
+                    enterPasswordUser = scanner.nextLine();
+                }
+            }
 
             if (function.isEmpty()) {
                 System.out.println("Nie dokonałeś żadnego wyboru");
                 System.out.println("Co wybierasz?");
                 function = scanner.nextLine();
             }
-                for (Function functionAvailable : functionList) {
-                        if (functionAvailable.getFunctionCode().equalsIgnoreCase(String.valueOf(function))) {
-                            functionAvailable.functionSupport();
-                        }
-                    }
-            if ((function.equals("[") || function.equals("]"))) {
-                System.out.println("Podaj hasło administratora");
-                String enterPasswordUser = scanner.nextLine();
-                while (!admin.getPassword().equals(enterPasswordUser)) {
-                    System.out.println("Niepoprawne hasło, spróbuj ponownie");
-                    enterPasswordUser = scanner.nextLine();
-
+            for (Function functionAvailable : functionList) {
+                if (functionAvailable.getFunctionCode().equalsIgnoreCase(String.valueOf(function))) {
+                    functionAvailable.functionSupport();
                 }
+            }
+            for (AdminFunctionInterface functionAvailable : adminFunctionList) {
+                if (functionAvailable.getAdminFunctionCode().equalsIgnoreCase(String.valueOf(function))) {
+                    functionAvailable.AdminFunctionSupport();
+                }
+
+
+
             }
         }
     }
