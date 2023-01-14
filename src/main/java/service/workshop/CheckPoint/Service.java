@@ -15,15 +15,15 @@ import java.time.LocalDateTime;
 public class Service {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idService;
 
     @ToString.Exclude
-    private String nameMechanic;
+    private String IdMechanic;
     private String description;
     private String comments;
 
     @CreationTimestamp
-    private LocalDateTime timeAdd;
+    private LocalDateTime timeAddActivities;
 
     @ManyToOne
     @ToString.Exclude

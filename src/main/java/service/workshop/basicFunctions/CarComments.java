@@ -1,6 +1,7 @@
 package service.workshop.basicFunctions;
 
 import service.workshop.CheckPoint.Car;
+import service.workshop.CheckPoint.Mechanic;
 import service.workshop.CheckPoint.Service;
 import service.workshop.DataAccessObject;
 
@@ -14,10 +15,12 @@ public class CarComments implements Function {
 
         this.dataAccessObject = new DataAccessObject<>();
         this.dataAccessObjectCar = new DataAccessObject<>();
+        this.dataAccessObjectMechanic = new DataAccessObject<>();
     }
 
     private DataAccessObject<Service> dataAccessObject;
     private DataAccessObject<Car> dataAccessObjectCar;
+    private DataAccessObject<Mechanic> dataAccessObjectMechanic;
 
     @Override
     public String getFunction() {
@@ -26,12 +29,12 @@ public class CarComments implements Function {
 
     @Override
     public String getFunctionCode() {
-        return "5";
+        return "6";
     }
 
     @Override
     public void functionSupport() {
-        ///////////////// Upewnij się że pojazd istnieje
+        //// wyświetlanie listy pojazdów
         List<Car> carList = dataAccessObjectCar.findAll(Car.class);
         carList.forEach(System.out::println);
 
@@ -45,16 +48,25 @@ public class CarComments implements Function {
             System.err.println("Samochód nie istnieje, nie można dodać uwag");
             return;
         }
-        //////// konstrukcja obiektu SerwisPojazdu
+
         System.out.println("Jakie masz uwagi na temat tego pojazdu?");
         String comment = Function.scanner.nextLine();
 
 
-        System.out.println("Podaj imie serwisanta");
-        String nameMechanikString = Function.scanner.nextLine();
-        String name = nameMechanikString;
+//        System.out.println("Podaj imie serwisanta");
+//        String nameMechanikString = Function.scanner.nextLine();
+//        String name = nameMechanikString;
+
+        List<Mechanic> mechanicList = dataAccessObjectMechanic.findAll(Mechanic.class);
+        mechanicList.forEach(System.out::println);
+
+        System.out.println("Podaj swój numer ID");
+        String idMechanicString = Function.scanner.nextLine();
+        Long idMechanic = Long.parseLong(idString);
 
         Service carComments = Service.builder()
+                .IdMechanic(idMechanicString)
+                .car(carOptional.get())
                 .comments(comment)
                 .build();
 

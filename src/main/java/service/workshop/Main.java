@@ -22,8 +22,9 @@ public class Main {
 
                             new AddMechanic(),
                             new AddCar(),
-                            new CarList(),
                             new AddServiceDescription(),
+                            new MechanicList(),
+                            new CarList(),
                             new CarComments()
                     )
             );

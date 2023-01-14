@@ -2,6 +2,8 @@ package service.workshop.basicFunctions;
 import service.workshop.CheckPoint.Car;
 import service.workshop.DataAccessObject;
 
+import java.time.LocalDateTime;
+
 public class AddCar implements Function {
     public AddCar() {
 
@@ -64,12 +66,17 @@ public class AddCar implements Function {
             System.out.println("Podaj numer rejestracyjny:");
             registeryNumber = Function.scanner.nextLine();
         }
+        System.out.println("Usterki wskazane przed rozpoczęciem serwisu");
+        String reportedDefects = Function.scanner.nextLine();
+
 
 
             Car samochód = Car.builder()
                     .mark(mark)
                     .model(model)
                     .registeryNumber(registeryNumber)
+                    .reportedDefects(reportedDefects)
+                    .timeAddCarToService(LocalDateTime.now())
                     .build();
 
             dataAccessObject.insert(samochód);
