@@ -31,7 +31,7 @@ public class Main {
                             new AddServiceDescription(),
                             new MechanicList(),
                             new CarList(),
-                            new CarComments()
+                            new AddComments()
 //                            new ServiceListByCarId(),
 //                            new ServiceListByMechanicId()
 

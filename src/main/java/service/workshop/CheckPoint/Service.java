@@ -20,7 +20,6 @@ public class Service {
     @ToString.Exclude
     private String IdMechanic;
     private String description;
-    private String comments;
 
     @CreationTimestamp
     private LocalDateTime timeAddActivities;
