@@ -16,6 +16,7 @@ public class Comments {
     private Long IdComment;
     @ToString.Exclude
     private String IdMechanic;
+    private String IdCar;
     private String Comments;
 
 

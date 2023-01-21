@@ -72,6 +72,7 @@ public class AddComments implements Function {
 
        Comments comments = Comments.builder()
                .IdMechanic(String.valueOf(idMechanic))
+               .IdCar(String.valueOf(idPojazd))
                .Comments(Comment)
                .build();
 
