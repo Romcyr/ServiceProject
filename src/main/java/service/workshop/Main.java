@@ -59,6 +59,7 @@ public class Main {
             if ((function.equals("8") || function.equals("9"))) {
                 System.out.println("Podaj hasło administratora");
                 String enterPasswordUser = scanner.nextLine();
+
                 while (!admin.getPassword().equals(enterPasswordUser)) {
                     System.out.println("Niepoprawne hasło, spróbuj ponownie");
                     enterPasswordUser = scanner.nextLine();
