@@ -13,12 +13,12 @@ public class Comments {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private Long IdComment;
-    @ToString.Exclude
-    private String IdMechanic;
-    private String IdCar;
-    private String Comments;
+    private Long id;
 
+    private String content;
+
+    @ManyToOne
+    private Service service;
 
 
 }

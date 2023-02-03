@@ -17,14 +17,20 @@ public class Service {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idService;
 
+
+    @ManyToOne
+    @EqualsAndHashCode.Exclude
     @ToString.Exclude
-    private String IdMechanic;
+    private Mechanic mechanic;
     private String description;
+
+
+
+    @ManyToOne()
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    private Car car;
 
     @CreationTimestamp
     private LocalDateTime timeAddActivities;
-
-    @ManyToOne
-    @ToString.Exclude
-    private Car car;
 }

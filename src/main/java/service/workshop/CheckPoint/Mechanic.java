@@ -20,6 +20,10 @@ public class Mechanic {
     private Long id;
     private String name;
 
-
+    @OneToMany(
+            mappedBy = "mechanic",
+            fetch = FetchType.EAGER
+    )
+    private Set<Service> services;
 
 }

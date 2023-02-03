@@ -45,7 +45,7 @@ public class AddServiceDescription implements Function {
 
         System.out.println("Podaj id serwisowanego pojzadu");
         String idString = Function.scanner.nextLine();
-        Long idPojazd = Long.parseLong(idString);
+        long idPojazd = Long.parseLong(idString);
 
 
         Optional<Car> carOptional = dataAccessObjectCar.find(Car.class, idPojazd);
@@ -59,25 +59,26 @@ public class AddServiceDescription implements Function {
 
         System.out.println("Podaj swój numer ID");
         String idMechanicString = Function.scanner.nextLine();
-        Long idMechanic = Long.parseLong(idString);
+        long idMechanic = Long.parseLong(idMechanicString);
+
 
 
         System.out.println("Podaj opis wykonanego serwisu");
         String description = Function.scanner.nextLine();
 
-
-//        System.out.println("Podaj imie serwisanta");
-//        String nameMechanikString = Function.scanner.nextLine();
-//        String name = nameMechanikString;
-
+        Optional<Mechanic> mechanicOptional= dataAccessObjectMechanic.find(Mechanic.class, idMechanic);
+        if (mechanicOptional.isEmpty()){
+            System.err.println("Samochód nie istnieje, nie można dodać serwisu");
+            return;
+        }
 
 
 
 
         Service carService = Service.builder()
-                .IdMechanic(idMechanicString)
-                .car(carOptional.get())
                 .description(description)
+                .mechanic(mechanicOptional.get())
+                .car(carOptional.get())
                 .build();
 
         dataAccessObject.insert(carService);
