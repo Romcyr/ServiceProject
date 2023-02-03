@@ -26,7 +26,7 @@ public class Service {
 
 
 
-    @ManyToOne()
+    @ManyToOne
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private Car car;

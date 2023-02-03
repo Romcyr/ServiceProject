@@ -61,22 +61,27 @@ public class AddComments implements Function {
 
 
 
-//        List<Mechanic> mechanicList = dataAccessObjectMechanic.findAll(Mechanic.class);
-//        mechanicList.forEach(System.out::println);
-//
-//        System.out.println("Podaj swój numer ID");
-//        String idMechanicString = Function.scanner.nextLine();
-//        Long idMechanic = Long.parseLong(idService);
-//        Optional<Mechanic> mechanicOptional = dataAccessObjectMechanic.find(Mechanic.class, idMechanic);
-//        if (mechanicOptional.isEmpty()) {
-//            System.err.println("Mechanik nie istnieje, nie można dodać uwag");
-//            return;
-//        }
+        List<Mechanic> mechanicList = dataAccessObjectMechanic.findAll(Mechanic.class);
+        mechanicList.forEach(System.out::println);
+
+        System.out.println("Podaj swój numer ID");
+
+        String idMechanicString = Function.scanner.nextLine();
+        Long idMechanic = Long.parseLong(idMechanicString);
+
+
+        Optional<Mechanic> mechanicOptional = dataAccessObjectMechanic.find(Mechanic.class, idMechanic);
+        if (mechanicOptional.isEmpty()) {
+            System.err.println("Mechanik nie istnieje, nie można dodać uwag");
+            return;
+        }
+
 
 
 
        Comments comments = Comments.builder()
                .content(Comment)
+               .mechanic(mechanicOptional.get())
                .service(serviceOptional.get())
                .build();
 

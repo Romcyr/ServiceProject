@@ -16,9 +16,13 @@ public class Comments {
     private Long id;
 
     private String content;
+    @ManyToOne
+    private Mechanic mechanic;
+
 
     @ManyToOne
     private Service service;
+
 
 
 }
